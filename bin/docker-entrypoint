@@ -9,7 +9,7 @@ fi
 # If running the rails server then create or migrate existing database
 if [[ "$*" == *"rails server"* ]] || [[ "$*" == *"bin/rails server"* ]]; then
   echo "Running database setup for all databases..."
-  ./bin/rails db:prepare
+  ./bin/rails db:migrate
   echo "Running database setup complete"
 fi
 
