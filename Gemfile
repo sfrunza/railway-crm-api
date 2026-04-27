@@ -55,3 +55,5 @@ end
 
 gem "pagy", "~> 9.0"
 gem "dotenv-rails", "~> 3.2"
+gem "sentry-ruby"
+gem "sentry-rails"
