@@ -95,12 +95,12 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  primary:
+  primary: &primary_production
     <<: *default
-    url: <%= ENV["DATABASE_URL"] %>
+    url: <%= ENV['DATABASE_URL'] %>
   cache:
-    <<: *default
+    <<: *primary_production
   queue:
-    <<: *default
+    <<: *primary_production
   cable:
-    <<: *default
+    <<: *primary_production
