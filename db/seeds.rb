@@ -7,3 +7,16 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+puts "Deleting old records..."
+
+User.delete_all
+
+puts "Creating new records..."
+
+User.create!(
+  email_address: "frunza.sergiu3@gmail.com",
+  password: "111111",
+)
+
+puts "Seeding complete!"

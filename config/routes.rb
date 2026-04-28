@@ -3,6 +3,11 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
+      resource :session, only: [ :create, :show, :destroy ] do
+        post :magic, on: :member
+      end
+      resources :passwords, param: :token
+
       resources :posts
     end
   end
