@@ -63,14 +63,17 @@ Rails.application.configure do
     protocol: "https"
   }
 
+  config.action_mailer.delivery_method = :smtp
+
   # Specify outgoing SMTP server. Remember to add smtp/* credentials via bin/rails credentials:edit.
   config.action_mailer.smtp_settings = {
-    user_name: ENV["SMTP_USERNAME"],
-    password: ENV["SMTP_PASSWORD"],
     address: "smtp.gmail.com",
     port: 587,
+    domain: "gmail.com",
+    user_name: ENV["SMTP_USERNAME"],
+    password: ENV["SMTP_PASSWORD"],
     authentication: :plain,
-    domain: "gmail.com"
+    enable_starttls_auto: true
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
